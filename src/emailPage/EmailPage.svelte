@@ -23,7 +23,9 @@
 <PageWrapper {...pageState}>
   {#if !sent}
     <div>
-      {emailData.mainText}
+      <div>
+        {emailData.mainText}<br /><br />
+      </div>
 
       <input
         type="email"
@@ -48,5 +50,8 @@
   }
   input[type="button"] {
     border-radius: 5px;
+  }
+  div {
+    text-align: center;
   }
 </style>

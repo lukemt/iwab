@@ -15,7 +15,7 @@
 
 {#if pageData.type == "info"}
   <InfoPage
-    text={pageData.text}
+    infoData={pageData}
     backgroundImage={pageData.backgroundImage}
     {goToNextPage}
     {pageState}
@@ -24,6 +24,7 @@
 
 {#if pageData.type === "game"}
   <GamePage
+    gameData={pageData}
     backgroundImage={pageData.backgroundImage}
     {goToNextPage}
     {pageState}

@@ -10,10 +10,14 @@ export interface IQuizPageData {
 export interface IInfoPageData {
   type: "info";
   text: string;
+  githubLinkText?: string;
 }
 
 export interface IGamePageData {
   type: "game";
+  title1: string;
+  title2: string;
+  next: string;
 }
 
 export interface IEmailPageData {

@@ -1,7 +1,16 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import type { IGamePageData } from "../data/dataTypes";
 
+  export let gameData: IGamePageData;
   export let goToNextPage: () => void;
+
+  enum COLOR {
+    DEFAULT = "#ffde3c",
+    FIRST = "#fff8d3",
+    SECOND = "#b3b3b3",
+    OUTLINE = "#19407a",
+  }
 
   var clickCount = 0;
   function hexPoints(x: number, y: number, radius: number) {
@@ -46,7 +55,7 @@
             hexPoints: hexPoints(x, y, radius),
             col: newCol,
             row: row,
-            color: "#ffde3c",
+            color: COLOR.DEFAULT,
           };
         }
       }
@@ -55,18 +64,16 @@
 
   const handleClick = (col: number, row: number) => (event: any) => {
     console.log("clicked", col);
-    spielFeld[row][col].color = clickCount % 2 ? "#b3b3b3" : "#fff8d3";
-    clickCount++;
-  };
-  const handleDblClick = (col: number, row: number) => (event: any) => {
-    console.log("dblclicked", col);
-    spielFeld[row][col].color = "#ffde3c";
+    if (spielFeld[row][col].color === COLOR.DEFAULT) {
+      spielFeld[row][col].color = clickCount % 2 ? COLOR.SECOND : COLOR.FIRST;
+      clickCount++;
+    }
   };
 </script>
 
 <div>
   <div class="title">
-    Spiele Tic Tac Toe in wabenform<br />bitte zu zweit spielen
+    {gameData.title1}<br />{gameData.title2}
   </div>
   <svg
     version="1.1"
@@ -78,9 +85,8 @@
       {#each row as col}
         <polygon
           points={col.hexPoints}
-          style="fill:{col.color};stroke:purple;stroke-width:5;cursor:pointer;"
+          style="fill:{col.color};stroke:{COLOR.OUTLINE};stroke-width:5;cursor:pointer;"
           on:click={handleClick(col.col, col.row)}
-          on:dblclick={handleDblClick(col.col, col.row)}
         />
       {/each}
     {/each}
@@ -89,7 +95,7 @@
   <!-- <pre>
     {JSON.stringify(spielFeld, null, 2)}
   </pre> -->
-  <div class="nextButton" on:click={goToNextPage}>nächste Seite &gt;</div>
+  <div class="nextButton" on:click={goToNextPage}>{gameData.next}</div>
 </div>
 
 <style>
