@@ -7,10 +7,10 @@
   import BackgoundImage from "../sharedBlocks/BackgoundImage.svelte";
   import type { IPageState } from "../types";
   import PageWrapper from "../basic/PageWrapper.svelte";
-  import WabenTryOut from "./WabenTryOut.svelte";
+  import GameContent from "./GameContent.svelte";
 </script>
 
 <BackgoundImage {backgroundImage} {...pageState} />
 <PageWrapper {...pageState}>
-  <WabenTryOut {goToNextPage} />
+  <GameContent {goToNextPage} />
 </PageWrapper>
