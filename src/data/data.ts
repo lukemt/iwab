@@ -7,13 +7,11 @@ export const data: PageData[] = [
   },
   {
     type: "info",
-    text:
-      "Fast 80% aller Nutz- und Wildpflanzen, darunter auch Obst und Gemüse wie Birnen, Äpfel, Kirschen, Erdbeeren, Pflaumen, Beeren, Pfirsiche, Nektarinen oder Trauben werden von Bienen bestäubt",
+    text: "Fast 80% aller Nutz- und Wildpflanzen, darunter auch Obst und Gemüse wie Birnen, Äpfel, Kirschen, Erdbeeren, Pflaumen, Beeren, Pfirsiche, Nektarinen oder Trauben werden von Bienen bestäubt",
   },
   {
     type: "info",
-    text:
-      "Aber auch die Verfügbarkeit von z.B. Nüssen oder Raps, haben wir der Bestäubung durch die Biene zu verdanken",
+    text: "Aber auch die Verfügbarkeit von z.B. Nüssen oder Raps, haben wir der Bestäubung durch die Biene zu verdanken",
   },
   {
     type: "info",
@@ -23,8 +21,7 @@ export const data: PageData[] = [
   {
     type: "info",
     backgroundImage: "orange_bee.jpg",
-    text:
-      "Honigbienen leben in einem Bienenvolk, das aus ca. 60.000 Arbeitsbienen besteht, einigen Hundert Drohnen und einer Königin",
+    text: "Honigbienen leben in einem Bienenvolk, das aus ca. 60.000 Arbeitsbienen besteht, einigen Hundert Drohnen und einer Königin",
   },
   {
     type: "info",
@@ -34,26 +31,22 @@ export const data: PageData[] = [
   {
     type: "info",
     backgroundImage: "purpleflower.jpg",
-    text:
-      "Wildbienen hingegen leben meistens als Einzelgänger, die meisten weiblichen Bienen leben allein und versorgen ihre Bruteier ohne Hilfe von Artgenossen",
+    text: "Wildbienen hingegen leben meistens als Einzelgänger, die meisten weiblichen Bienen leben allein und versorgen ihre Bruteier ohne Hilfe von Artgenossen",
   },
   {
     type: "info",
     backgroundImage: "purpleflower.jpg",
-    text:
-      "Fast 50% der Wildbienen nisten unter der Erde, entweder in den Gängen anderer Insekten, in selbstgebauten Niströhren, hohlen Pflanzenstängeln oder in Mauerspalten",
+    text: "Fast 50% der Wildbienen nisten unter der Erde, entweder in den Gängen anderer Insekten, in selbstgebauten Niströhren, hohlen Pflanzenstängeln oder in Mauerspalten",
   },
   {
     type: "info",
     backgroundImage: "purpleflower.jpg",
-    text:
-      "Wildbienen leben nur etwa vier bis sechs Wochen. In dieser recht kurzen Lebensspanne schaffen es Weibchen maximal zehn bis 30 mit Pollen versorgte und befruchtete Brutzellen anzulegen",
+    text: "Wildbienen leben nur etwa vier bis sechs Wochen. In dieser recht kurzen Lebensspanne schaffen es Weibchen maximal zehn bis 30 mit Pollen versorgte und befruchtete Brutzellen anzulegen",
   },
   {
     type: "info",
     backgroundImage: "purpleflower.jpg",
-    text:
-      "In Deutschland gibt es 590 Wildbienenarten, davon sind über 50% bedroht und 30% vom Aussterben bedroht",
+    text: "In Deutschland gibt es 590 Wildbienenarten, davon sind über 50% bedroht und 30% vom Aussterben bedroht",
   },
   {
     type: "info",
@@ -104,6 +97,10 @@ export const data: PageData[] = [
   },
   {
     type: "email",
+    mainText: "Bleibe informiert, trage Deine Email-Adresse ein: ",
+    emailPlaceholderText: "emailadresse@example.com",
+    buttonText: "Senden",
+    thanksText: "Vielen Dank für Dein Vertrauen!",
   },
   {
     type: "info",

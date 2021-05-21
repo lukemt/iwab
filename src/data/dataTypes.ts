@@ -18,12 +18,17 @@ export interface IGamePageData {
 
 export interface IEmailPageData {
   type: "email";
+  mainText: string;
+  emailPlaceholderText: string;
+  buttonText: string;
+  thanksText: string;
 }
 
 interface IBackground {
   backgroundImage?: string;
 }
 
+// Definition des Union-Types
 export type PageData = (
   | IInfoPageData
   | IGamePageData

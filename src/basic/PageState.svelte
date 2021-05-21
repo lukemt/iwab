@@ -42,10 +42,6 @@
     currentPageNumber = nextPageNumber;
     currentZIndex++;
   };
-  const goToPrevPage = () => {
-    currentPageNumber = previousPageNumber;
-    currentZIndex++;
-  };
 </script>
 
 <div>
