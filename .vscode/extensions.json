@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "svelte.svelte-vscode",
+    "eamodio.gitlens",
+    "tabnine.tabnine-vscode",
+    "streetsidesoftware.code-spell-checker",
+    "orta.vscode-jest"
+  ]
+}
