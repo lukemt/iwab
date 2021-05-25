@@ -9,7 +9,7 @@ This is an open source project. The entire source code resides in this repositor
 1. Make sure you have node installed on your system.
 2. Clone this repo:
    ```bash
-   $ git clone … && cd…
+   $ git clone https://github.com/lukemt/iwab.git && cd iwab
    ```
 3. Start the development server
    ```bash
