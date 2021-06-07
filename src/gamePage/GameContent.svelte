@@ -43,9 +43,9 @@
       spielFeld[row] = [];
       for (col = 0; col < 4; col += 1) {
         var newCol = col + Math.ceil(row / 2) - 2;
-        var gjugkjh = col - Math.floor(row / 2);
+        var minusCol = col - Math.floor(row / 2);
 
-        if (newCol >= 0 && gjugkjh < 3) {
+        if (newCol >= 0 && minusCol < 3) {
           var offset = (Math.sqrt(3) * radius) / 2;
           x = 40 + offset * col * 2;
           y = 40 + offset * row * Math.sqrt(3);

@@ -1,4 +1,4 @@
-import { GameBoard } from "./Board";
+import { Board } from "./Board";
 import { PointOwner } from "./types";
 
 describe("Board", () => {
@@ -15,7 +15,7 @@ describe("Board", () => {
 
   it("should return 10 valid not owned points", () => {
     // Arrange
-    const gameBoard = new GameBoard();
+    const gameBoard = new Board();
 
     // Act
     const points = gameBoard.allPointsOfBoard();
