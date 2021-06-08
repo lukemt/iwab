@@ -4,7 +4,13 @@
 
 <div class="container">
   <div class="text">
-    {text}
+    {#each text.split("*") as textFragment, i}
+      {#if i % 2 === 0}
+        {textFragment}
+      {:else}
+        <i>{textFragment}</i>
+      {/if}
+    {/each}
   </div>
 </div>
 
@@ -19,10 +25,6 @@
   .text {
     padding: 50px;
 
-    /* font-family: "Redacted Script"; */
-    /* font-family: "Indie Flower", cursive; */
-    /* font-family: "Open Sans", sans-serif; */
-    /* font-family: "Hammersmith One", sans-serif; */
     font-family: "Krona One", sans-serif;
 
     /* text-shadow: 0 0 20px #ffffff; */
