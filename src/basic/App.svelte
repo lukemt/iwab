@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { urlParams } from "../config";
   import { data } from "../data/data";
 
   import PageState from "./PageState.svelte";
@@ -6,8 +7,6 @@
   let currentPageNumber = 0;
   let currentZIndex = 1;
 
-  // url param &page=
-  const urlParams = new URLSearchParams(window.location.search);
   currentPageNumber = Number(urlParams.get("page")) || 0;
 </script>
 
