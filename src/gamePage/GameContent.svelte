@@ -1,77 +1,48 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   import type { IGamePageData } from "../data/dataTypes";
+  import { Board } from "./gameLogic/Board";
+  import type { Field } from "./gameLogic/Field";
+  import { FieldOwner } from "./gameLogic/types";
 
   export let gameData: IGamePageData;
   export let goToNextPage: () => void;
 
   enum COLOR {
-    DEFAULT = "#ffde3c",
-    FIRST = "#fff8d3",
-    SECOND = "#b3b3b3",
     OUTLINE = "#19407a",
+    HIGHLIGHT = "yellow",
   }
 
+  const ownerColors: string[] = [];
+  ownerColors[FieldOwner.Free] = "#ffde3c";
+  ownerColors[FieldOwner.Player1] = "#fff8d3";
+  ownerColors[FieldOwner.Player2] = "#b3b3b3";
+
+  const getColor = (field: Field) => {
+    if (field.highlight) {
+      return COLOR.HIGHLIGHT;
+    } else {
+      return ownerColors[field.owner];
+    }
+  };
+
+  const board = new Board();
+
+  let allFields = board.allFieldsOfBoard();
   var clickCount = 0;
-  function hexPoints(x: number, y: number, radius: number) {
-    var points = [];
-    for (var theta = 0; theta < Math.PI * 2; theta += Math.PI / 3) {
-      var pointX, pointY;
 
-      pointX = x + radius * Math.sin(theta);
-      pointY = y + radius * Math.cos(theta);
-
-      points.push(pointX + "," + pointY);
-    }
-
-    return points.join(" ");
-  }
-
-  var spielFeld: {
-    hexPoints: string;
-    col: number;
-    row: number;
-    color: string;
-  }[][] = [];
-
-  var x, y, row, col, pointX, pointY, theta;
-
-  onMount(() => {
-    var radius = 30;
-
-    for (row = 0; row < 4; row += 1) {
-      spielFeld[row] = [];
-      for (col = 0; col < 4; col += 1) {
-        var newCol = col + Math.ceil(row / 2) - 2;
-        var minusCol = col - Math.floor(row / 2);
-
-        if (newCol >= 0 && minusCol < 3) {
-          var offset = (Math.sqrt(3) * radius) / 2;
-          x = 40 + offset * col * 2;
-          y = 40 + offset * row * Math.sqrt(3);
-          if (row % 2 !== 0) x += offset;
-
-          spielFeld[row][newCol] = {
-            hexPoints: hexPoints(x, y, radius),
-            col: newCol,
-            row: row,
-            color: COLOR.DEFAULT,
-          };
-        }
-      }
-    }
-  });
-
-  const handleClick = (col: number, row: number) => (event: any) => {
-    console.log("clicked", col);
-    if (spielFeld[row][col].color === COLOR.DEFAULT) {
-      spielFeld[row][col].color = clickCount % 2 ? COLOR.SECOND : COLOR.FIRST;
+  const handleClick = (field: Field) => (event: any) => {
+    if (field.owner === FieldOwner.Free) {
+      board.makeMove(
+        field.point,
+        clickCount % 2 ? FieldOwner.Player2 : FieldOwner.Player1
+      );
+      allFields = board.allFieldsOfBoard();
       clickCount++;
     }
   };
 </script>
 
-<div>
+<div class="container">
   <div class="title">
     {gameData.title1}<br />{gameData.title2}
   </div>
@@ -81,24 +52,29 @@
     height="300"
     xmlns="http://www.w3.org/2000/svg"
   >
-    {#each spielFeld as row}
-      {#each row as col}
-        <polygon
-          points={col.hexPoints}
-          style="fill:{col.color};stroke:{COLOR.OUTLINE};stroke-width:5;cursor:pointer;"
-          on:click={handleClick(col.col, col.row)}
-        />
-      {/each}
+    {#each allFields as field}
+      <polygon
+        points={field.svgHexPoints}
+        style="fill:{getColor(
+          field
+        )};stroke:{COLOR.OUTLINE};stroke-width:5;cursor:pointer;"
+        on:click={handleClick(field)}
+      />
     {/each}
   </svg>
 
-  <!-- <pre>
-    {JSON.stringify(spielFeld, null, 2)}
-  </pre> -->
   <div class="nextButton" on:click={goToNextPage}>{gameData.next}</div>
 </div>
 
 <style>
+  .container {
+    background-color: #ffffff;
+    opacity: 0.8;
+    border-radius: 70px;
+    width: 70vw;
+    margin: 50px 0px;
+    padding: 80px;
+  }
   div {
     text-align: center;
   }

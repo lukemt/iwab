@@ -12,7 +12,7 @@ export enum Dimension {
 /**
  * Owner of a field. A field of the Board can be either free or occupied by one player.
  */
-export enum PointOwner {
+export enum FieldOwner {
   Free,
   Player1,
   Player2,

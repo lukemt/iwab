@@ -1,9 +1,9 @@
 import type { Board } from "./Board";
 import type { Point } from "./Point";
-import type { Line, PointOwner } from "./types";
+import type { FieldOwner, Line } from "./types";
 
 /**
- * Analyses a Move on the Board.
+ * Analyses a potential Move on the Board.
  */
 export class MoveAnalyser {
   private point: Point;
@@ -21,7 +21,7 @@ export class MoveAnalyser {
 
   /**
    * Gets all possible Lines that contain the Point that is to be analysed and removes those that protrude the Board.
-   * @returns Array of Lines
+   * @returns Array of Lines.
    */
   private getLinesOfPoint() {
     const allLines = this.point.linesAllDimensions();
@@ -34,10 +34,10 @@ export class MoveAnalyser {
    * @param player The player to count.
    * @returns Number of occupations.
    */
-  private countPlayersInLine(line: Line, player: PointOwner): number {
+  private countPlayersInLine(line: Line, player: FieldOwner): number {
     let count = 0;
     for (let point of line) {
-      if (this.board.getPointOwner(point) === player) {
+      if (this.board.getField(point).owner === player) {
         count++;
       }
     }
@@ -45,24 +45,18 @@ export class MoveAnalyser {
   }
 
   /**
-   * Returns whether the move is wins the game.
+   * Returns whether the move wins the game.
    * @param player Player to consider.
-   * @returns Boolean
+   * @returns null or the Winning Line
    */
-  public isMoveWinning(player: PointOwner): boolean {
+  public isMoveWinning(player: FieldOwner) {
     const linesOfPoint = this.getLinesOfPoint();
     for (let line of linesOfPoint) {
       if (this.countPlayersInLine(line, player) === 3) {
-        return true;
+        // needs to be 2 if point is free
+        return line;
       }
     }
-    return false;
+    return null;
   }
 }
-
-/**
- * find winner:
- * put move into board.
- * * board.makeMove(point)
- * * new MoveAnalyser(point).isPointWinning():boolean
- */
