@@ -23,7 +23,7 @@ export const data: PageData[] = [
   // Why bees are important
   {
     type: "info",
-    text: "Fast 80% aller Nutz- und Wildpflanzen, darunter auch *Obst* und *Gemüse* wie Birnen, Äpfel, Kirschen, Erdbeeren, Pflaumen, Beeren, Pfirsiche, Nektarinen oder Trauben werden von Bienen bestäubt",
+    text: "Fast *80%* aller Nutz- und Wildpflanzen, darunter auch *Obst* und *Gemüse* wie Birnen, Äpfel, Kirschen, Erdbeeren, Pflaumen, Beeren, Pfirsiche, Nektarinen oder Trauben werden von Bienen bestäubt",
     backgroundImage: "ricefruits.jpg",
   },
   {
@@ -57,12 +57,16 @@ export const data: PageData[] = [
 
   {
     type: "info",
-    text: "In Deutschland gibt es 590 Wildbienenarten, davon sind über *50% bedroht* und *30% vom Aussterben* bedroht",
+    text: [
+      "In Deutschland gibt es *590 Wildbienenarten*",
+      ", davon sind über *50%* bedroht",
+      " und *30%* vom *Aussterben* bedroht",
+    ].join(""),
     backgroundImage: "concrete.jpg",
   },
   {
     type: "info",
-    text: "Insgesamt gibt es 80% weniger Insekten als vor 30 Jahren heute",
+    text: "Insgesamt gibt es heute *80%* weniger Insekten als vor *30* Jahren",
   },
 
   {
@@ -72,20 +76,20 @@ export const data: PageData[] = [
   },
   {
     type: "info",
-    text: "Wildbienen leben nur etwa vier bis sechs Wochen",
+    text: "*Wildbienen* leben nur etwa vier bis sechs Wochen",
     backgroundImage: "purpleflower.jpg",
   },
   {
     type: "info",
     text: "Auch die Hummel gehört zu den Wildbienen",
-    backgroundImage: "orange_bee.jpg",
+    backgroundImage: "bumblebee.jpg",
   },
 
   // Honigbienen
   {
     type: "info",
     backgroundImage: "bee-colony.jpg",
-    text: "Honigbienen hingegen leben in einem Bienenvolk, das aus ca. 60.000 Arbeitsbienen besteht, einigen Hundert Drohnen und einer Königin",
+    text: "*Honigbienen* hingegen leben in einem Bienenvolk, das aus ca. 60.000 Arbeitsbienen besteht, einigen Hundert Drohnen und einer *Königin*",
   },
   {
     type: "info",
@@ -132,7 +136,7 @@ export const data: PageData[] = [
   },
   {
     type: "quiz",
-    backgroundImage: "orange_bee.jpg",
+    backgroundImage: "bumblebee.jpg",
     question: "Die Hummel ist...",
     answers: [
       {
@@ -150,6 +154,7 @@ export const data: PageData[] = [
     title1: "Spiele Tic Tac Toe in wabenform",
     title2: "bitte zu zweit spielen",
     next: "spiel beenden >",
+    backgroundImage: "sungarden.jpg",
   },
   {
     type: "email",
