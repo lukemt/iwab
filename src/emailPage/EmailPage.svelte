@@ -13,8 +13,10 @@
   let sent: boolean = false;
 
   const handleButtonClick = () => {
-    sendEmailAdress(emailAdress);
-    sent = true;
+    if (emailAdress) {
+      sendEmailAdress(emailAdress);
+      sent = true;
+    }
   };
 </script>
 

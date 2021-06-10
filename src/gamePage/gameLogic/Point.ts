@@ -52,7 +52,7 @@ export class Point {
   }
 
   /**
-   * Returns all lines in a given Dimension, that include this Point.
+   * Returns all Lines in a given Dimension, that include this Point.
    * @param dimension Dimension of which the Lines should be created.
    * @returns Created Lines as array of Lines.
    */
@@ -65,7 +65,7 @@ export class Point {
   }
 
   /**
-   * Returns all possible lines that contain this Point.
+   * Returns all possible Lines that contain this Point.
    * @returns Array of Lines
    */
   linesAllDimensions(): Line[] {

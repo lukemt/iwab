@@ -1,13 +1,15 @@
 <script lang="ts">
+  import type { StyleMode } from "../types";
+
   import RichText from "./RichText.svelte";
 
   export let text: string;
-  export let styleMode: "dark" | "light" | "noglass" | "nobackground";
+  export let styleMode: StyleMode;
 </script>
 
 <div class="container {styleMode}">
   <div class="text {styleMode}">
-    <RichText {text} />
+    <RichText {text} {styleMode} />
   </div>
 </div>
 

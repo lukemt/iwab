@@ -1,6 +1,6 @@
 <script lang="ts">
   import BackgoundImage from "../sharedBlocks/BackgoundImage.svelte";
-  import type { IPageState } from "../types";
+  import type { IPageState, StyleMode } from "../types";
   import PageWrapper from "../basic/PageWrapper.svelte";
   import InfoText from "./InfoText.svelte";
   import type { IInfoPageData } from "../data/dataTypes";
@@ -16,11 +16,7 @@
     if (!backgroundImage) {
       return "nobackground";
     } else if (urlParams.get("mode")) {
-      return urlParams.get("mode") as
-        | "dark"
-        | "light"
-        | "noglass"
-        | "nobackground";
+      return urlParams.get("mode") as StyleMode;
     } else {
       return "light";
     }
@@ -30,7 +26,7 @@
 <BackgoundImage {backgroundImage} {...pageState} />
 <PageWrapper {...pageState} onClick={goToNextPage}>
   <InfoText text={infoData.text} styleMode={getStyleMode()} />
+  {#if infoData.githubLinkText}
+    <GithubLink linkText={infoData.githubLinkText} />
+  {/if}
 </PageWrapper>
-{#if infoData.githubLinkText}
-  <GithubLink linkText={infoData.githubLinkText} />
-{/if}
