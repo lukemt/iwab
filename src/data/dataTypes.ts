@@ -10,6 +10,7 @@ export interface IQuizPageData {
 export interface IInfoPageData {
   type: "info";
   text: string;
+  clickMode?: "imageFirst" | "textFirst" | "onlyBoth";
   githubLinkText?: string;
 }
 

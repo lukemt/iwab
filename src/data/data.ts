@@ -23,30 +23,32 @@ export const data: PageData[] = [
   // Why bees are important
   {
     type: "info",
-    text: "Fast *80%* aller Nutz- und Wildpflanzen, darunter auch *Obst* und *Gemüse* wie Birnen, Äpfel, Kirschen, Erdbeeren, Pflaumen, Beeren, Pfirsiche, Nektarinen oder Trauben werden von Bienen bestäubt",
+    text: "Fast *80%* aller Nutz- und Wildpflanzen, darunter auch *Obst* und *Gemüse*  werden von Bienen bestäubt",
     backgroundImage: "ricefruits.jpg",
   },
   {
     type: "info",
-    text: "Aber auch die Verfügbarkeit von z.B. Nüssen oder Raps, haben wir der Bestäubung durch die Biene zu verdanken",
+    text: "Aber auch die *Verfügbarkeit* von z.B. Nüssen oder Raps, haben wir der *Bestäubung* durch die Biene zu verdanken",
     backgroundImage: "golden-rod.jpg",
   },
   {
     type: "info",
-    text: "Sie ist deswegen das drittwichtigste Nutztier nach Rind und Schwein",
+    text: "Sie ist deswegen das *drittwichtigste* Nutztier",
     backgroundImage: "orange_bee.jpg",
   },
 
   // bienensterben hier
   {
     type: "info",
-    text: "Aber der Bestand an Bienen, geht immer mehr zurück",
+    text: "Aber der *Bestand* an Bienen, geht immer mehr zurück",
     backgroundImage: "deadbee.jpg",
+    clickMode: "imageFirst",
   },
   {
     type: "info",
     text: "In manchen teilen der Chinas gibt es heute schon gar keine Bienen mehr",
     backgroundImage: "deadbees.jpg",
+    clickMode: "textFirst",
   },
 
   {
@@ -54,14 +56,19 @@ export const data: PageData[] = [
     text: "Dort müssen Wanderarbeiter Blumen von Hand bestäuben",
     backgroundImage: "hand-pollination.jpg",
   },
-
   {
     type: "info",
-    text: [
-      "In Deutschland gibt es *590 Wildbienenarten*",
-      ", davon sind über *50%* bedroht",
-      " und *30%* vom *Aussterben* bedroht",
-    ].join(""),
+    text: "In Deutschland gibt es *590 Wildbienenarten*",
+    backgroundImage: "wildbienenarten.jpg",
+  },
+  {
+    type: "info",
+    text: "Wie die Seidenbiene, Wollbiene, Scherenbiene,  \nBlattschneiderbiene, Weidensandbiene und Erdhummel",
+    backgroundImage: "wildbienenarten.jpg",
+  },
+  {
+    type: "info",
+    text: "Davon sind über *50%* bedroht und *30%* vom *Aussterben* bedroht",
     backgroundImage: "concrete.jpg",
   },
   {
@@ -71,8 +78,8 @@ export const data: PageData[] = [
 
   {
     type: "info",
-    text: "Die Hälfte der Wildbienen wohnen unter der Erde, entweder in den Gängen anderer Insekten, in selbstgebauten Niströhren, hohlen Pflanzenstängeln oder in Mauerspalten",
-    backgroundImage: "biotope.jpg",
+    text: "Die Hälfte der Wildbienen wohnen unter der Erde",
+    backgroundImage: "earthbee.jpg",
   },
   {
     type: "info",

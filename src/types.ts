@@ -4,3 +4,5 @@ export interface IPageState {
   isNext: boolean;
   zIndex: number;
 }
+
+export type StyleMode = "dark" | "light" | "noglass" | "nobackground";
